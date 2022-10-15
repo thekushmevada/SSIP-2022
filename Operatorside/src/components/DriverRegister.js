@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {db} from '../firebase'
@@ -36,6 +37,13 @@ const DriverRegister = () => {
     
   };
 
+=======
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import { db } from "../firebase";
+
+const DriverRegister = () => {
+>>>>>>> 2ab4dc9406dac69b04a6ebff6cf9917869d38110
   return (
     <section className="vh-100" style={{ backgroundColor: "#eee" }}>
       <div className="container h-100">

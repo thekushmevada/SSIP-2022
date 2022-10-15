@@ -11,4 +11,8 @@ var firebaseApp = firebase.initializeApp({
 
 var db = firebaseApp.firestore();
 
+<<<<<<< HEAD
 export { db };
+=======
+export { db };
+>>>>>>> 2ab4dc9406dac69b04a6ebff6cf9917869d38110
