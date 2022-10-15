@@ -1,4 +1,4 @@
-function addressAutocomplete(containerElement, callback, options) {
+function addressAutocomplete(containerElement, callback, options) { 
 
     const MIN_ADDRESS_LENGTH = 3;
     const DEBOUNCE_DELAY = 300;
