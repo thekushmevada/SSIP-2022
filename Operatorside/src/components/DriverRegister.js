@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import db from "../firebase";
-
+// import { db } from "../firebase";
+import { db } from "../firebase";
 const DriverRegister = () => {
   const [drivername, setName] = useState("");
   const [drivermobile, setDriverMobile] = useState("");
@@ -12,7 +12,7 @@ const DriverRegister = () => {
 
   const [loader, setLoader] = useState(false);
 
-  var handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoader(true);
     db.collection("users")
