@@ -1,6 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-const Register = () => {
+import {db} from '../firebase'
+
+const DriverRegister = () => {
+  const [drivername,setName] = useState("");
+  const [drivermobile,setDriverMobile] = useState("");
+  const [hospitalname,setHospital] = useState("");
+  const [vehicleregister,setVehicle] = useState("");
+  const [password,setpassword] = useState("");
+  const [repeatpassword,setRepeatPassword] = useState("");
+
+  var handleSubmit = (e) => {
+    e.preventDefault();
+    db.collection('contacts').add({
+      drivername:drivername,
+      drivermobile:drivermobile,
+      hospitalname:hospitalname,
+      vehicleregister:vehicleregister,
+      password:password,
+      repeatpassword:repeatpassword,
+    })
+    .then(() => {
+      alert('Message Submitted');
+      
+    }).catch((error) => {
+      alert(error.message);
+    });
+
+    setName('');
+      setDriverMobile('');
+      setHospital('');
+      setVehicle('');
+      setpassword('');
+      setRepeatPassword('');
+    
+  };
+
   return (
     <section className="vh-100" style={{ backgroundColor: "#eee" }}>
       <div className="container h-100">
@@ -13,13 +48,15 @@ const Register = () => {
                     Vehicle Registration
                   </p>
                   <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                    <form className="mx-1 mx-md-4 mt-4">
+                    <form className="mx-1 mx-md-4 mt-4" onSubmit={handleSubmit}>
                       <div className="d-flex flex-row align-items-center mb-2">
                         <div className="form-outline flex-fill mb-0">
                           <input
                             type="text"
                             id="form3Example1c"
                             className="form-control"
+                            value={drivername}
+                            onChange={(e) => setName(e.target.value)}
                           />
                           <label className="form-label" for="form3Example1c">
                             Driver Name
@@ -33,6 +70,8 @@ const Register = () => {
                             type="text"
                             id="form3Example3c"
                             className="form-control"
+                            value={drivermobile}
+                            onChange={(e) => setDriverMobile(e.target.value)}
                           />
                           <label className="form-label" for="form3Example3c">
                             Driver Mobile No.
@@ -75,6 +114,8 @@ const Register = () => {
                             type="text"
                             id="form3Example1c"
                             className="form-control"
+                            value={hospitalname}
+                            onChange={(e) => setHospital(e.target.value)}
                           />
                           <label className="form-label" for="form3Example1c">
                             Hospital Name
@@ -88,6 +129,8 @@ const Register = () => {
                             type="text"
                             id="form3Example3c"
                             className="form-control"
+                            value={vehicleregister}
+                            onChange={(e) => setVehicle(e.target.value)}
                           />
                           <label className="form-label" for="form3Example3c">
                             Vehical Registration No.
@@ -101,6 +144,8 @@ const Register = () => {
                             type="password"
                             id="form3Example4c"
                             className="form-control"
+                            value={password}
+                            onChange={(e) => setpassword(e.target.value)}
                           />
                           <label className="form-label" for="form3Example4c">
                             Password
@@ -114,6 +159,8 @@ const Register = () => {
                             type="password"
                             id="form3Example4cd"
                             className="form-control"
+                            value={repeatpassword}
+                            onChange={(e) => setRepeatPassword(e.target.value)}
                           />
                           <label className="form-label" for="form3Example4cd">
                             Repeat your password
@@ -129,7 +176,7 @@ const Register = () => {
                   </label>
                 </div>
                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                  <button type="button" className="btn btn-primary btn-lg">
+                  <button type="submit" className="btn btn-primary btn-lg">
                     Register
                   </button>
                 </div>
@@ -142,4 +189,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default DriverRegister;
