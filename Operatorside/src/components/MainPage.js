@@ -9,7 +9,7 @@ const MainPage = () => {
       <div className="row">
         <div className="col bg-danger text-center">
           <h1 className="text-light mt-5">EMERGENCY</h1>
-          <div className="mt-2">
+          <div className="mt-2" id="blink">
             <IconContext.Provider value={{ color: "White", size: "120px" }}>
               <VscWarning />
             </IconContext.Provider>
