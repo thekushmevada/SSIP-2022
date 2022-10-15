@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-const Register = () => {
+// import { db } from "../firebase";
+
+const DriverRegister = () => {
   return (
     <section className="vh-100" style={{ backgroundColor: "#eee" }}>
       <div className="container h-100">
@@ -142,4 +144,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default DriverRegister;
