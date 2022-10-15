@@ -1,11 +1,11 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-const Login = () => {
+
+const LoginRto = () => {
   return (
     <div class="d-flex justify-content-center align-items-center vh-100">
       <div class="border border-2 py-4 px-5 rounded">
         <form>
-          <h1 className="mt-2 mb-5">Login Form</h1>
+          <h1 className="mt-2 mb-5">Admin Login Form</h1>
           <div class="form-outline mb-2">
             <input type="email" id="form2Example1" class="form-control" />
             <label class="form-label" for="form2Example1">
@@ -48,4 +48,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginRto;
