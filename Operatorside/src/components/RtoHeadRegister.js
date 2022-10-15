@@ -1,6 +1,51 @@
+import React, { useEffect, useState } from "react";
+import { db } from "../firebase";
 const RtoHeadRegister = () => {
+
+  const [headname, setHeadName] = useState("");
+  const [headno, setHeadNo] = useState("");
+  const [officeaddress, setAddress] = useState("");
+  const [rtooffice, setRTO] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+  const [repeatpassword, setRepeatPassword] = useState("");
+
+  const [loader, setLoader] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoader(true);
+    db.collection("RTO_Head")
+      .add({
+        headname:headname,
+        headno:headno,
+        officeaddress:officeaddress,
+        rtooffice:rtooffice,
+        email:email,
+        password:password,
+        repeatpassword:repeatpassword,
+      })
+      .then(() => {
+        setLoader(false);
+        alert("Message Submitted");
+      })
+      .catch((error) => {
+        alert(error.message);
+        setLoader(false);
+      });
+
+      setHeadName("");
+      setHeadNo("");
+      setAddress("");
+      setRTO("");
+      setEmail("");
+    setpassword("");
+    setRepeatPassword("");
+  };
+
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -19,6 +64,8 @@ const RtoHeadRegister = () => {
                               type="text"
                               id="form3Example3c"
                               className="form-control"
+                              value={headname}
+                              onChange={(e) => setHeadName(e.target.value)}
                             />
                             <label className="form-label" for="form3Example3c">
                               Head Name
@@ -32,6 +79,8 @@ const RtoHeadRegister = () => {
                               type="text"
                               id="form3Example4c"
                               className="form-control"
+                              value={headno}
+                              onChange={(e) => setHeadNo(e.target.value)}
                             />
                             <label className="form-label" for="form3Example4c">
                               Head No.
@@ -44,6 +93,8 @@ const RtoHeadRegister = () => {
                               id="form3Example4cd"
                               className="form-control"
                               rows="5"
+                              value={officeaddress}
+                              onChange={(e) => setAddress(e.target.value)}
                             />
                             <label className="form-label" for="form3Example4cd">
                               Office Address
@@ -60,6 +111,8 @@ const RtoHeadRegister = () => {
                               type="text"
                               id="form3Example1c"
                               className="form-control"
+                              value={rtooffice}
+                              onChange={(e) => setRTO(e.target.value)}
                             />
                             <label className="form-label" for="form3Example1c">
                               RTO Office Name
@@ -72,6 +125,8 @@ const RtoHeadRegister = () => {
                               type="text"
                               id="form3Example1c"
                               className="form-control"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
                             />
                             <label className="form-label" for="form3Example1c">
                               Email
@@ -85,6 +140,8 @@ const RtoHeadRegister = () => {
                               type="password"
                               id="form3Example3c"
                               className="form-control"
+                              value={password}
+                              onChange={(e) => setpassword(e.target.value)}
                             />
                             <label className="form-label" for="form3Example3c">
                               Password
@@ -98,6 +155,8 @@ const RtoHeadRegister = () => {
                               type="password"
                               id="form3Example4c"
                               className="form-control"
+                              value={repeatpassword}
+                              onChange={(e) => setRepeatPassword(e.target.value)}
                             />
                             <label className="form-label" for="form3Example4c">
                               Repeat your password
@@ -113,7 +172,7 @@ const RtoHeadRegister = () => {
                     </label>
                   </div>
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" className="btn btn-primary btn-lg">
+                    <button type="submit" className="btn btn-primary btn-lg">
                       Register
                     </button>
                   </div>
