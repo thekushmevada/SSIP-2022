@@ -18,9 +18,14 @@ const HomePageContent = () => {
             </div>
             <div className="col-8 d-flex">
               <div class="input-group rounded justify-content-center">
-                <button type="button" class="btn btn-dark btn-rounded btn-icon">
-                  Navigate
-                </button>
+                <a href="./navigate/index.html">
+                  <button
+                    type="button"
+                    class="btn btn-dark btn-rounded btn-icon"
+                  >
+                    Navigate
+                  </button>
+                </a>
               </div>
             </div>
             <div className="col">
