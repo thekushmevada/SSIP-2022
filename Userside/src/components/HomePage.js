@@ -10,7 +10,7 @@ const HomePage = () => {
         <iframe
           src="https://evspdrivermap.netlify.app/"
           allow="midi; geolocation;"
-          height="900px"
+          height="820px"
           width="100%"
           style={{position:"absolute"}}
         ></iframe>

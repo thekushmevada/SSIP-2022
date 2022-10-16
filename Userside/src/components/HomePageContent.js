@@ -11,7 +11,7 @@ const HomePageContent = () => {
       <div className="text-center" id="header">
         <div className="container">
           <div className="row">
-            <div className="col">
+            {/* <div className="col">
               <button type="button" class="btn btn-dark btn-rounded btn-icon">
                 <HiMenuAlt2 />
               </button>
@@ -21,7 +21,7 @@ const HomePageContent = () => {
               <button type="button" class="btn btn-dark btn-rounded btn-icon">
                 <FaRegUser />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
