@@ -18,7 +18,7 @@ const HomePageContent = () => {
             </div>
             <div className="col-8 d-flex">
               <div class="input-group rounded justify-content-center">
-                <a href="https://product-details-1.web.app/">
+                <a href="https://product-details-1.web.app/" target="_blank">
                   <button
                     type="button"
                     class="btn btn-dark btn-rounded btn-icon"
