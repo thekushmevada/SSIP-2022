@@ -6,7 +6,7 @@ const LoginRto = () => {
     <div class="d-flex justify-content-center align-items-center vh-100">
       <div class="border border-2 py-4 px-5 rounded">
         <form>
-          <h2 className="mt-2 mb-5">Rto Login Form</h2>
+          <h2 className="mt-2 mb-5">RTO Login Form</h2>
           <div class="form-outline mb-2">
             <input type="email" id="form2Example1" class="form-control" required/>
             <label class="form-label" for="form2Example1">
