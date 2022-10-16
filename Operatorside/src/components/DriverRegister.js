@@ -65,7 +65,7 @@ const DriverRegister = () => {
                               onChange={(e) => setName(e.target.value)}
                             />
                             <label className="form-label" for="form3Example1c">
-                              Driver Name
+                              Driver Email
                             </label>
                           </div>
                         </div>
