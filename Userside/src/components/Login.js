@@ -1,11 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div class="d-flex justify-content-center align-items-center vh-100">
       <div class="border border-2 py-4 px-5 rounded">
         <form>
-          <h1 className="mt-2 mb-5">Login Form</h1>
+          <h2 className="mt-2 mb-5">Driver Login Form</h2>
           <div class="form-outline mb-2">
             <input type="email" id="form2Example1" class="form-control" />
             <label class="form-label" for="form2Example1">
@@ -39,9 +40,11 @@ const Login = () => {
               <a href="#!">Forgot password?</a>
             </div>
           </div>
-          <button type="button" class="btn btn-primary btn-block">
-            Log In
-          </button>
+          <Link to="/main">
+            <button type="button" class="btn btn-primary btn-block">
+              Log In
+            </button>
+          </Link>
         </form>
       </div>
     </div>

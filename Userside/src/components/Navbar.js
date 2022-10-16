@@ -9,7 +9,7 @@ const Navbar = () => {
           EVSP (Emergency Vehical Service Provider)
         </span>
         <form class="d-flex" role="search">
-          <Link to="/login">
+          <Link to="/">
             <button class="btn btn-outline-secondary mx-1" type="button">
               LOG OUT
             </button>

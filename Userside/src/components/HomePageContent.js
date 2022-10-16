@@ -16,17 +16,10 @@ const HomePageContent = () => {
                 <HiMenuAlt2 />
               </button>
             </div>
-            <div className="col-8">
-              <div class="input-group rounded ">
-                <input
-                  type="search"
-                  class="form-control rounded"
-                  placeholder="Search"
-                  aria-label="Search"
-                  aria-describedby="search-addon"
-                />
+            <div className="col-8 d-flex">
+              <div class="input-group rounded justify-content-center">
                 <button type="button" class="btn btn-dark btn-rounded btn-icon">
-                  <BsSearch />
+                  Navigate
                 </button>
               </div>
             </div>

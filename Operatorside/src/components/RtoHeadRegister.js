@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
+import { Link } from "react-router-dom";
 const RtoHeadRegister = () => {
 
   const [headname, setHeadName] = useState("");
@@ -168,7 +169,7 @@ const RtoHeadRegister = () => {
                   </div>
                   <div className="form-check d-flex justify-content-center mb-3">
                     <label for="form2Example3">
-                      Already have Account ? <a href="#!">Log In</a>
+                      Already have Account ? <Link to="/">Log In</Link>
                     </label>
                   </div>
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
