@@ -8,13 +8,13 @@ const LoginRto = () => {
         <form>
           <h2 className="mt-2 mb-5">Rto Login Form</h2>
           <div class="form-outline mb-2">
-            <input type="email" id="form2Example1" class="form-control" />
+            <input type="email" id="form2Example1" class="form-control" required/>
             <label class="form-label" for="form2Example1">
               Email address
             </label>
           </div>
           <div class="form-outline mb-4">
-            <input type="password" id="form2Example2" class="form-control" />
+            <input type="password" id="form2Example2" class="form-control" required/>
             <label class="form-label" for="form2Example2">
               Password
             </label>

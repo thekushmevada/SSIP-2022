@@ -9,25 +9,14 @@ const HomePageContent = () => {
     <>
       {/* search bar contant  */}
       <div className="text-center" id="header">
-        <div className="container mt-4">
+        <div className="container">
           <div className="row">
             <div className="col">
               <button type="button" class="btn btn-dark btn-rounded btn-icon">
                 <HiMenuAlt2 />
               </button>
             </div>
-            <div className="col-8 d-flex">
-              <div class="input-group rounded justify-content-center">
-                <a href="https://product-details-1.web.app/" target="_blank">
-                  <button
-                    type="button"
-                    class="btn btn-dark btn-rounded btn-icon"
-                  >
-                    Navigate
-                  </button>
-                </a>
-              </div>
-            </div>
+           
             <div className="col">
               <button type="button" class="btn btn-dark btn-rounded btn-icon">
                 <FaRegUser />

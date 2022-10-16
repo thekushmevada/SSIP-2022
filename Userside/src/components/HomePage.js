@@ -7,7 +7,16 @@ const HomePage = () => {
     <>
       <div className="forMap">
         <Navbar />
-        <HomePageContent />
+        <iframe
+          src="https://evspdrivermap.netlify.app/"
+          allow="midi; geolocation;"
+          height="900px"
+          width="100%"
+          style={{position:"absolute"}}
+        ></iframe>
+        <div style={{ zIndex: "1" }}>
+          <HomePageContent />
+        </div>
       </div>
     </>
   );
