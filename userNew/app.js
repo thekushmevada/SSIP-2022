@@ -17,7 +17,7 @@ var sx, sy, dx, dy;
 
 app.post("/directions", (req, res) => {
        var data = req.body;
-    console.log(req.body);
+    //console.log(req.body);
     sx = data.sx;
     sy = data.sy;
     dx = data.dx;
