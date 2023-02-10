@@ -253,6 +253,24 @@ function showPosition(position) {
 
   https://api.geoapify.com/v1/routing?waypoints=${Slat},${Slon}|${Dlat},${Dlon}&mode=drive&details=instruction_details&apiKey=1bf3fed7c7684f7f9f587c95fae779ad
   Slongitude = position.coords.longitude;
+  fetch("http://localhost:3000/directions", {
+     
+    // Adding method type
+    method: "POST",
+     
+    // Adding body or contents to send
+    body: JSON.stringify({
+        sx:Slatitude,
+        sy:Slongitude,
+        dx:Slatitude,
+        dy:Slongitude,        
+    }),
+     
+    // Adding headers to the request
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
   route(Slatitude, Slongitude, Dlatitude, Dlongitude);
 }
 
