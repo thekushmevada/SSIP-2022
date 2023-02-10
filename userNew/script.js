@@ -253,24 +253,6 @@ function showPosition(position) {
 
   https://api.geoapify.com/v1/routing?waypoints=${Slat},${Slon}|${Dlat},${Dlon}&mode=drive&details=instruction_details&apiKey=1bf3fed7c7684f7f9f587c95fae779ad
   Slongitude = position.coords.longitude;
-  fetch("http://localhost:3000/directions", {
-     
-    // Adding method type
-    method: "POST",
-     
-    // Adding body or contents to send
-    body: JSON.stringify({
-        sx:Slatitude,
-        sy:Slongitude,
-        dx:Slatitude,
-        dy:Slongitude,        
-    }),
-     
-    // Adding headers to the request
-    headers: {
-        "Content-type": "application/json; charset=UTF-8"
-    }
-})
   route(Slatitude, Slongitude, Dlatitude, Dlongitude);
 }
 
@@ -380,9 +362,53 @@ function route(Slat, Slon, Dlat, Dlon) {
       turnByTurns.push(pointFeature);
     })));
 
-    console.log(turnByTurns);
-    for (let i = 0; i <= turnByTurns.length; i++)
-      // console.log(turnByTurns[i].geometry.coordinates)
+    let newTurns = []
+    turnByTurns.map((data)=>{
+      newTurns.push(data.geometry.coordinates);
+    })
+
+    var csv="";
+    //create CSV file data in an array 
+    // var array2D = [
+    //                 [ "a" , "2"] ,
+    //                 [ "c" ,"d" ]
+    //               ];
+     
+    for (var index1 in newTurns) {
+      var row = newTurns[index1];
+       
+      // Row is the row of array at index "index1"
+      var string = "";
+       
+      // Empty string which will be added later
+      for (var index in row) {
+        // Traversing each element in the row
+        var w = row[index];
+         
+        // Adding the element at index "index" to the string
+        string += w;
+        if (index != row.length - 1) {
+          string += ",";
+          // If the element is not the last element , then add a comma
+        }
+      }
+      string += "\n";
+       
+      // Adding next line at the end
+      csv += string;
+      // adding the string to the final string "csv"
+    }
+    console.log(csv);
+
+
+
+
+
+
+
+    // console.log(newTurns);
+    // for (let i = 0; i <= turnByTurns.length; i++)
+    //   // console.log(turnByTurns[i].geometry.coordinates)
 
     L.geoJSON({
       type: "FeatureCollection",

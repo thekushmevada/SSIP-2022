@@ -9,8 +9,28 @@ app.use(cors({
     origin: '*'
 }));
 
-// app.use(express.urlencoded({ extended: true }));
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+
+const mongoose = require("mongoose");
+const connectDB = require("./utils/connectDb");
+const Coordinates = require("./models/operator.js");
+mongoose.set('strictQuery', false);
+connectDB().then(() => {
+    Coordinates.findOne({}, function (error, data) {
+        if (error) return console.error(error);
+        console.log(data);
+        // if (data.password == req.body.password) {
+        //     res.sendFile(__dirname + "/dashboard.html");
+        // }
+        // else{
+        //     console.log("Wrong password");
+        //     res.sendFile(__dirname + "/login.html");
+        // }
+
+    });
+})
 
 
 var sx, sy, dx, dy;
