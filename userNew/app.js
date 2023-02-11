@@ -36,8 +36,8 @@ connectDB().then(() => {
 var sx, sy, dx, dy;
 
 app.post("/directions", (req, res) => {
-       var data = req.body;
-    //console.log(req.body);
+    var data = req.body;
+    console.log(req.body);
     sx = data.sx;
     sy = data.sy;
     dx = data.dx;
@@ -60,6 +60,66 @@ app.get("/", (req, res) => {
 
 
 
+
+
+
+var arrayCoords;
+app.post('/dev', (req, res) => {
+    // Save the data available in req.body somewhere
+    console.log(req.body.JSONObject);
+    arrayCoords = req.body.JSONObject;
+    const coords = new Coordinates({
+        data: arrayCoords
+    });
+    coords.save((error) => {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log('User saved successfully!');
+        }
+    });
+    //console.log(typeof(arrayCoords[0]))
+    // Coordinates.insertOne(arrayCoords,function(err,res){
+    //     console.log("Document Inserted Into Collection");
+    // });
+    // const document=new Coordinates({
+    //     "data":['music','movies']
+    // });
+    // document.save(function(err){
+    //     console.log("error");
+    // })
+
+    res.status(200).send('Got data');
+})
+
+
 app.listen(3000, (req, res) => {
     console.log("listening on 3000...");
 })
+
+
+
+
+
+
+
+
+
+
+
+
+// dv
+// SVGDefsElement
+// sv
+// sv
+// SVGSVGElementsvds
+// vds
+// vds
+// v
+// dispatchEventdsvdv
+// SVGDefsElementsv
+// dispatchEventdsvds
+// vdsvds
+// vdsvdssdv
+// vdsvdsvdsv
+// sv
