@@ -92,7 +92,15 @@ app.post('/dev', (req, res) => {
     res.status(200).send('Got data');
 })
 
-
+app.post("/login",(req,res)=>{
+    // console.log("hey");
+    console.log(req.body);
+    res.send("<h1>Welcome</h1>");
+    // req.send("<h1>Hey</h1>");
+})
+// app.get("/login",(req,res)=>{
+//     console.log("hey");
+// })
 app.listen(3000, (req, res) => {
     console.log("listening on 3000...");
 })
