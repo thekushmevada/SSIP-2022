@@ -32,6 +32,8 @@ connectDB().then(() => {
     });
 })
 
+app.use(express.static("public"));
+
 
 var sx, sy, dx, dy;
 
@@ -60,7 +62,18 @@ app.get("/", (req, res) => {
 
 
 
-
+app.get("/data", (req, res) => {
+    Coordinates.find({}, function (err, dataa) {
+        dataa = dataa[dataa.length - 1]
+        data = dataa.data;
+        const newArr = [];
+        while (data.length) newArr.push(data.splice(0, 2));
+        console.log(newArr);
+        // res.send(newTurns);
+        res.json({newArr});
+    })
+    // res.send("<h1>Hey</h1>");
+})
 
 
 var arrayCoords;
@@ -92,15 +105,30 @@ app.post('/dev', (req, res) => {
     res.status(200).send('Got data');
 })
 
-app.post("/login",(req,res)=>{
+const user = "GJ02AB5252";
+const password = "abc";
+
+
+app.post("/login", (req, res) => {
     // console.log("hey");
     console.log(req.body);
-    res.send("<h1>Welcome</h1>");
+    if (req.body.password == password) {
+        res.sendFile(__dirname + "/index.html");
+    }
+    else {
+        // res.sendFile(__dirname+"/index.html");
+        res.redirect("/login");
+    }
+
     // req.send("<h1>Hey</h1>");
 })
-// app.get("/login",(req,res)=>{
-//     console.log("hey");
-// })
+app.get("/login", (req, res) => {
+    console.log("hey");
+    // res.send("<h1>Welcome</h1>");
+    res.sendFile(__dirname + "/login.html");
+})
+
+
 app.listen(3000, (req, res) => {
     console.log("listening on 3000...");
 })

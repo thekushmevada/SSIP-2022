@@ -271,9 +271,9 @@ function getLocation() {
 
 function showPosition(position) {
   Slatitude = position.coords.latitude;
-  fetch(
-    `https://api.geoapify.com/v1/routing?waypoints=${Slatitude},${Slongitude}|${Dlatitude},${Dlongitude}&mode=drive&details=instruction_details&apiKey=1bf3fed7c7684f7f9f587c95fae779ad`
-  ).then((res) => console.log("dev", res.json()));
+  // fetch(
+  //   `https://api.geoapify.com/v1/routing?waypoints=${Slatitude},${Slongitude}|${Dlatitude},${Dlongitude}&mode=drive&details=instruction_details&apiKey=1bf3fed7c7684f7f9f587c95fae779ad`
+  // ).then((res) => console.log("dev", res.json()));
 
   //api.geoapify.com/v1/routing?waypoints=${Slat},${Slon}|${Dlat},${Dlon}&mode=drive&details=instruction_details&apiKey=1bf3fed7c7684f7f9f587c95fae779ad
   https: Slongitude = position.coords.longitude;
@@ -424,16 +424,16 @@ function route(Slat, Slon, Dlat, Dlon) {
         turnByTurns.map((data) => {
           newTurns.push(data.geometry.coordinates);
         });
-        console.log(newTurns);
+        // console.log(newTurns);
         // turnByTurn.indexOf();
         // newTurns.indexOf([72.426485, 23.027275]);
         let x;
         let y;
 
+        console.log(newTurns);
         markerss.on("dragend", function (e) {
           var xcoo = markerss.getLatLng().lat;
           var ycoo = markerss.getLatLng().lng;
-          console.log(newTurns);
           var kilometer = 1000000000000000;
 
           newTurns.forEach((data) => {
@@ -450,7 +450,7 @@ function route(Slat, Slon, Dlat, Dlon) {
             }
           });
           console.log("kilometer: " + kilometer);
-          console.log(yesx, yesy);
+          // console.log(yesx, yesy);
           if (kilometer < 0.09) {
             console.log("close");
             // newTurns.pop();
