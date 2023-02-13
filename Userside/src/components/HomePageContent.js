@@ -9,32 +9,19 @@ const HomePageContent = () => {
     <>
       {/* search bar contant  */}
       <div className="text-center" id="header">
-        <div className="container mt-4">
+        <div className="container">
           <div className="row">
-            <div className="col">
+            {/* <div className="col">
               <button type="button" class="btn btn-dark btn-rounded btn-icon">
                 <HiMenuAlt2 />
               </button>
             </div>
-            <div className="col-8">
-              <div class="input-group rounded ">
-                <input
-                  type="search"
-                  class="form-control rounded"
-                  placeholder="Search"
-                  aria-label="Search"
-                  aria-describedby="search-addon"
-                />
-                <button type="button" class="btn btn-dark btn-rounded btn-icon">
-                  <BsSearch />
-                </button>
-              </div>
-            </div>
+           
             <div className="col">
               <button type="button" class="btn btn-dark btn-rounded btn-icon">
                 <FaRegUser />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

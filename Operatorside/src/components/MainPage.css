@@ -1,7 +1,15 @@
-#map {
-  background-image: url("../../public/map.webp");
-  height: 97vh;
-}
+/* #map { */
+  /* background-image: url("../../public/map.webp"); */
+  /* height: 97vh; */
+/* } */
 #btn {
   float: right;
+}
+#blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainPage.css";
 import { BiUser } from "react-icons/bi";
 import { VscWarning } from "react-icons/vsc";
 import { IconContext } from "react-icons";
+import { Link } from "react-router-dom";
+
 const MainPage = () => {
   return (
     <div>
       <div className="row">
         <div className="col bg-danger text-center">
           <h1 className="text-light mt-5">EMERGENCY</h1>
-          <div className="mt-2">
+          <div className="mt-2" id="blink">
             <IconContext.Provider value={{ color: "White", size: "120px" }}>
               <VscWarning />
             </IconContext.Provider>
@@ -61,9 +63,31 @@ const MainPage = () => {
           >
             <BiUser />
           </button>
+          <Link to="/">
+            <button
+              type="button"
+              className="btn btn-dark btn-rounded btn-icon m-4"
+              id="btn"
+            >
+              Logout
+            </button>
+          </Link>
+          <iframe
+            width="100%"
+            height="600"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          >
+            <a href="https://www.maps.ie/distance-area-calculator.html">
+              area maps
+            </a>
+          </iframe>
         </div>
       </div>
-    </div> 
+    </div>
   );
 };
 
